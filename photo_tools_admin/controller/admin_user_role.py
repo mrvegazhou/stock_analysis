@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from stock_admin.__init__ import send, reqparse, utils
+from photo_tools_admin.__init__ import send, reqparse, utils
 from . import admin
-from stock_admin.service.admin_user_role import AdminUserRoleService
+from photo_tools_admin.service.admin_user_role import AdminUserRoleService
 
 
 @admin.route('/assignRole', methods=['POST'])

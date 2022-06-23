@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __init__ import app, WEB_IP, WEB_PORT
-from stock_admin.controller import admin
+from photo_tools_admin.controller import admin
 
 if __name__ == "__main__":
 

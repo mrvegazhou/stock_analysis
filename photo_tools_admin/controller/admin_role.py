@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from stock_admin.__init__ import send, reqparse
+from photo_tools_admin.__init__ import send, reqparse
 from . import admin
-from stock_admin.service.admin_role import AdminRoleService
-from stock_admin.service.admin_role_menu_power import AdminRoleMenuPowerService
+from photo_tools_admin.service.admin_role import AdminRoleService
+from photo_tools_admin.service.admin_role_menu_power import AdminRoleMenuPowerService
 
 
 @admin.route('/sysRoles', methods=['POST'])
@@ -13,7 +13,7 @@ def get_sys_role_list():
     parser.add_argument('page_num', help='页码为空', type=int)
     parser.add_argument('title', help='角色名称出错', type=str)
     parser.add_argument('status', help='角色状态出错', type=int)
-    args = parser.parse_args(http_error_code=50009)
+    args = parser.parse_args(http_error_code=50003)
     res, total = AdminRoleMenuPowerService.get_role_powers_list_by_condition(page_size=args['page_size'], page_num=args['page_num'], role_title=args['title'], status=args['status'])
     return send(200, data={'list': res, 'total': total})
 

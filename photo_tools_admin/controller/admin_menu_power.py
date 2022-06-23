@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from stock_admin.__init__ import send, reqparse
-from stock_admin.service.admin_menu_power import AdminMenuPowerService
+from photo_tools_admin.__init__ import send, reqparse
+from photo_tools_admin.service.admin_menu_power import AdminMenuPowerService
 from . import admin
 
 

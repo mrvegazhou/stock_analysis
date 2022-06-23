@@ -2,7 +2,7 @@
 import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
 import typing
-from stock_admin.model.admin_user_role import AdminUserRole
+from photo_tools_admin.model.admin_user_role import AdminUserRole
 from core.exception.api_exception import ValError
 
 

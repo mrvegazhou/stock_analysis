@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import typing
 import json
-from stock_admin.__init__ import db, utils
+from photo_tools_admin.__init__ import db, utils
 
 class Base(db.Model):
     __abstract__ = True

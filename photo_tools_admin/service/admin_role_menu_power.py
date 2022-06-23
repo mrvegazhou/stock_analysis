@@ -3,11 +3,11 @@ import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
 from itertools import groupby
 from operator import itemgetter
-from stock_admin.model.admin_role_menu_power import AdminRoleMenuPower
-from stock_admin.model.admin_role import AdminRole
-from stock_admin.model.admin_menu_power import AdminMenuPower
-from stock_admin.exception.api_exception import RoleNotFoundFailed, DelRoleFailed
-from stock_admin.config.constant import Constant
+from photo_tools_admin.model.admin_role_menu_power import AdminRoleMenuPower
+from photo_tools_admin.model.admin_role import AdminRole
+from photo_tools_admin.model.admin_menu_power import AdminMenuPower
+from photo_tools_admin.exception.api_exception import RoleNotFoundFailed, DelRoleFailed
+from photo_tools_admin.config.constant import Constant
 
 
 class AdminRoleMenuPowerService:

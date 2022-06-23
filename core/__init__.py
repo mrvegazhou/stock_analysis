@@ -17,6 +17,9 @@ from .http import reqparse
 from .exception.api_exception import APIException
 from .config import constant
 
+from .extensions.redprint import Redprint, RedprintAssigner
+from .extensions.api_docs.redprint import RedprintWithDoc
+
 ENV = config['env']
 WEB_IP = config[ENV].WEB_IP
 WEB_PORT = config[ENV].WEB_PORT
@@ -53,10 +56,11 @@ request = request
 make_response = make_response
 send_from_directory = send_from_directory
 g = g
+Blueprint = Blueprint
+RedprintAssigner = RedprintAssigner
+Redprint = Redprint
+RedprintWithDoc = RedprintWithDoc
 
 from .cache import RedisCache as Cache
 cache = Cache()
-
-# admin = Blueprint('admin', 'admin')
-# finance = Blueprint('finance', 'finance')
 

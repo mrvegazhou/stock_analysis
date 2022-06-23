@@ -3,7 +3,7 @@ import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
 from itertools import groupby
 from operator import itemgetter
-from stock_admin.model.admin_role import AdminRole
+from photo_tools_admin.model.admin_role import AdminRole
 from core.exception.api_exception import APIException
 
 class AdminRoleService:

@@ -2,8 +2,8 @@
 import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
 import typing
-from stock_admin.model.admin_menu import AdminMenu
-from stock_admin.model.admin_menu_power import AdminMenuPower
+from photo_tools_admin.model.admin_menu import AdminMenu
+from photo_tools_admin.model.admin_menu_power import AdminMenuPower
 from core.exception.api_exception import ValError, APIException
 
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
-from stock_admin.model.base import Base
-from stock_admin.__init__ import db, utils
+from photo_tools_admin.model.base import Base
+from photo_tools_admin.__init__ import db, utils
 
 
 class AdminRoleMenuPower(Base):

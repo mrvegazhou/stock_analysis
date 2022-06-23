@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from stock_admin.__init__ import send, reqparse, request
+from photo_tools_admin.__init__ import send, reqparse, request
 from . import admin
-from stock_admin.service.admin_role_menu_power import AdminRoleMenuPowerService
+from photo_tools_admin.service.admin_role_menu_power import AdminRoleMenuPowerService
 
 
 # 通过角色id获取菜单和权限列表信息

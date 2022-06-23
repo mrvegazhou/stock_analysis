@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import sys
 sys.path.append("/Users/vega/workspace/codes/py_space/working/photo-tools-api")
-from stock_admin.model.admin_user import AdminUser
-from stock_admin.__init__ import utils
+from photo_tools_admin.model.admin_user import AdminUser
+from photo_tools_admin.__init__ import utils
 from core.exception.api_exception import UserNotFoundError, AddUserError, UserHaveExistedError, UserPasswordError
 from core.decorator.oath2_tool import clear_token
-from stock_admin.service.admin_user_role import AdminUserRoleService
-from stock_admin.config.constant import Constant
+from photo_tools_admin.service.admin_user_role import AdminUserRoleService
+from photo_tools_admin.config.constant import Constant
 
 class AdminUserService:
 

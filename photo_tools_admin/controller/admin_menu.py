@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from stock_admin.__init__ import send, reqparse
+from photo_tools_admin.__init__ import send, reqparse
 from . import admin
-from stock_admin.service.admin_menu import AdminMenuService
+from photo_tools_admin.service.admin_menu import AdminMenuService
 
 
 @admin.route('/menusByIds', methods=['POST'])

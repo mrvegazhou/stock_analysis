@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from stock_admin.__init__ import APIException
-from stock_admin.__init__ import CODE
+from photo_tools_admin.__init__ import APIException
+from photo_tools_admin.__init__ import CODE
 
 
 class RoleNotFoundFailed(APIException):
