@@ -67,7 +67,7 @@ class AdminUserService:
         return res
 
     @staticmethod
-    def get_admin_user_list(page_num=1, page_size=Constant.ADMIN_PAGE_SIZE, username=None, status=None):
+    def get_admin_user_list(page_num=1, page_size=Constant.ADMIN_PAGE_SIZE.value, username=None, status=None):
         list, total = AdminUser.get_users(page_num=page_num, page_size=page_size, username=username, status=status)
         admin_user_ids = [item.uuid for item in list]
         user_roles = AdminUserRoleService.get_user_role_dict(admin_user_ids)

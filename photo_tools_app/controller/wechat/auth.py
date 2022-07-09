@@ -3,7 +3,7 @@
 from photo_tools_app.__init__ import send, reqparse, Redprint
 import requests
 from photo_tools_app.config.constant import Constant
-from photo_tools_app.utils.wx_biz_data_crypt import WXBizDataCrypt
+from photo_tools_app.utils.jwt_util import JwtUtil
 
 parser = reqparse.RequestParser()
 
@@ -28,25 +28,21 @@ def login():
     errmsg	string	错误信息
     """
     parser.add_argument('platCode')
-    parser.add_argument('platUserInfoMap')
     args = parser.parse_args(http_error_code=50003)
     code = args['platCode']
-    plat_user_info_map = args['platUserInfoMap']
-    encrypted_data = plat_user_info_map['encryptedData']
-    iv = plat_user_info_map['iv']
-    appid = Constant.APP_ID
-    secret = Constant.APP_SECRET
-    url = Constant.WX_LOGIN
+    appid = Constant.APP_ID.value
+    secret = Constant.APP_SECRET.value
+    url = Constant.WX_LOGIN.value
     url = url.format(appid, secret, code)
     rq = requests.get(url)
     rq_json = rq.json()
     if rq_json.get('errcode') is not None:
         data = {"error": rq_json.get('errmsg')}
-        return send(10000, data=data)
+        return send(50010, data=data)
     else:
         openid = rq_json.get('openid')
         session_key = rq_json.get('session_key')
-        pc = WXBizDataCrypt(appid, session_key)  # 对用户信息进行解密
-        userinfo = pc.decrypt(encrypted_data, iv)  # 获得用户信息
-        print(userinfo, openid)
-        return send(10000, data=userinfo)
+        # jwt生成
+        jwt_token = JwtUtil.encode_token({'openid': openid, 'session_key': session_key})
+        return send(200, data={'jwt': jwt_token})
+

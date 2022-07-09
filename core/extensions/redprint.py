@@ -3,6 +3,7 @@
 from collections import namedtuple
 from importlib import import_module
 from flask import Blueprint
+import functools
 
 # 路由函数的权限和模块信息(meta信息)
 # name 权限名；module 权限所属模块
@@ -17,9 +18,12 @@ class Redprint(object):
         self.mound = []
 
     def route(self, rule, **options):
-        def decorator(f):
-            self.mound.append((f, rule, options))
-            return f
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                return func(*args, **kwargs)
+            self.mound.append((func, rule, options))
+            return wrapper
 
         return decorator
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import subprocess
+import os
 from flask_cors import CORS  # 添加CORS组件 允许跨域访问
 from flask import Flask, request, make_response, send_from_directory, current_app, g, jsonify, Blueprint
 from .config.sys_config import config
@@ -63,4 +64,8 @@ RedprintWithDoc = RedprintWithDoc
 
 from .cache import RedisCache as Cache
 cache = Cache()
+
+# 当前目录
+CORE_DIR = os.path.split(os.path.abspath(__file__))[0]  # 当前目录
+
 

@@ -81,7 +81,7 @@ class AdminUser(Base):
         return AdminUser.query.filter_by(uuid=uuid).first()
 
     @staticmethod
-    def get_users(page_num=1, page_size=Constant.ADMIN_PAGE_SIZE, username=None, phone=None, email=None, status=None):
+    def get_users(page_num=1, page_size=Constant.ADMIN_PAGE_SIZE.value, username=None, phone=None, email=None, status=None):
         total = AdminUser.get_users_total(username, phone, email, status)
         start, end = utils['common'].pagination(page_num, page_size, total)
         exp = AdminUser.query.filter(AdminUser.delete_time==None)

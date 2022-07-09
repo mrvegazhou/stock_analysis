@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __init__ import app, WEB_IP, WEB_PORT, Blueprint, RedprintAssigner
+from photo_tools_app.utils.jwt_required import jwt_wx_authentication
 
 APP_NAME = 'photo_tools_app'
 
@@ -19,9 +20,14 @@ def register_blueprint():
     for url_prefix, bp in bp_list:
         app.register_blueprint(bp, url_prefix=url_prefix)
 
-@app.before_request
-def befor_process():
-    print("befor_process0")
+
+app.before_request(jwt_wx_authentication)
+
+# 跨域支持
+def after_request(resp):
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+app.after_request(after_request)
 
 
 if __name__ == "__main__":
@@ -30,7 +36,7 @@ if __name__ == "__main__":
 
     if WEB_IP == 'localhost':
         # 本地调试
-        app.run(host='0.0.0.0', port=WEB_PORT, debug=False, threaded=True)
+        app.run(host='0.0.0.0', port=WEB_PORT, threaded=True, debug=True)
         # app.run()
         # ssl_context = (
         #    './server.crt',

@@ -1,0 +1,57 @@
+ERROR 2022-07-02 22:04:15 FaceDetModelLoader.py: 37] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:04:43 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:04:43 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:04:43 FaceDetModelLoader.py: 37] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:08:12 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:08:12 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:08:12 FaceDetModelLoader.py: 38] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:08:41 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:08:41 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:08:41 FaceDetModelLoader.py: 39] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:09:46 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:09:46 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:09:46 FaceDetModelLoader.py: 39] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:31:41 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:31:41 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:31:41 FaceDetModelLoader.py: 34] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:31:57 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:31:57 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:31:57 FaceDetModelLoader.py: 34] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:35:13 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:35:13 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:35:13 FaceDetModelLoader.py: 34] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:35:46 FaceDetModelLoader.py: 20] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:35:46 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:35:46 FaceDetModelLoader.py: 34] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:38:15 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:38:15 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:38:15 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:44:59 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:44:59 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:44:59 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:46:46 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:46:46 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:46:46 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:53:43 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:53:43 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:53:43 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:54:09 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: /Users/vega/workspace/codes/py_space/working/photo-tools-api/core/extensions/face_detect/face_sdk/models, model category: face_detection，model name: face_detection_1.0
+ERROR 2022-07-02 22:54:09 BaseModelLoader.py: 33] The configuration file meta.json was not found or failed to parse the file!
+INFO 2022-07-02 22:55:06 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:55:06 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:55:06 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:56:16 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:56:16 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+INFO 2022-07-02 22:56:16 FaceDetModelLoader.py: 39] Successfully loaded the face detection model!
+INFO 2022-07-02 22:57:17 FaceDetModelLoader.py: 23] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:57:17 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:57:17 FaceDetModelLoader.py: 37] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:57:46 FaceDetModelLoader.py: 23] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:57:46 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+INFO 2022-07-02 22:57:47 FaceDetModelLoader.py: 41] Successfully loaded the face detection model!
+INFO 2022-07-02 22:58:12 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:58:12 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+ERROR 2022-07-02 22:58:12 FaceDetModelLoader.py: 35] The model failed to load, please check the model path: models/face_detection/face_detection_1.0/face_detection_retina.pkl!
+INFO 2022-07-02 22:58:26 FaceDetModelLoader.py: 21] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
+INFO 2022-07-02 22:58:26 BaseModelLoader.py: 39] Successfully parsed the model configuration file meta.json!
+INFO 2022-07-02 22:58:26 FaceDetModelLoader.py: 39] Successfully loaded the face detection model!
