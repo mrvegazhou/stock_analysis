@@ -73,6 +73,10 @@ class FaceDetect():
 
 if __name__ == "__main__":
 
-    model, cfg = FaceDetect.getLibFaceDetection()
-    dets = FaceDetect.libFaceDetection(model, cfg, '/Users/zhouquan/Downloads/视频文件/qrcode_for_gh_02e8118151f5_258.jpeg')
+    # model, cfg = FaceDetect.getLibFaceDetection()
+    # dets = FaceDetect.libFaceDetection(model, cfg, '/Users/zhouquan/Downloads/视频文件/qrcode_for_gh_02e8118151f5_258.jpeg')
+
+    from core.extensions.paddleDetection.infer import main as detection
+    #python tools/infer.py -c configs/ppyolo/ppyolo_r50vd_dcn_1x_coco.yml -o use_gpu=true weights=https://paddledet.bj.bcebos.com/models/ppyolo_r50vd_dcn_1x_coco.pdparams --infer_img=demo/000000014439.jpg
+
 
