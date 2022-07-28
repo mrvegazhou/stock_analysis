@@ -1,0 +1,10 @@
+Deploy:
+  model: model.pdmodel
+  params: model.pdiparams
+  transforms:
+  - type: LoadImages
+  - short_size: 512
+    type: ResizeByShort
+  - mult_int: 32
+    type: ResizeToIntMult
+  - type: Normalize

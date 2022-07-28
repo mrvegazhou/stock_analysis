@@ -28,24 +28,31 @@ class JWTInvalidTokenError(APIException):
     data = ''
 
 class FaceDetModelParseeFailed(APIException):
-    def __init__(self, data):
-        self.data = data
     res_code = 80001
     msg = CODE[80001]
     http_code = 401
 
 class FaceDetModelLoaderFailed(APIException):
-    def __init__(self, data):
-        self.data = data
     res_code = 80002
     msg = CODE[80002]
     http_code = 401
 
 class FaceDetectionImgFailed(APIException):
-    def __init__(self, data):
-        self.data = data
     res_code = 80003
     msg = CODE[80003]
     http_code = 401
 
+class CreateImgParamFailed(APIException):
+    res_code = 80004
+    msg = CODE[80004]
+    http_code = 401
 
+class FaceImgSaveDirFailed(APIException):
+    res_code = 80007
+    msg = CODE[80007]
+    http_code = 401
+
+class FaceImgNotExists(APIException):
+    res_code = 80008
+    msg = CODE[80008]
+    http_code = 401

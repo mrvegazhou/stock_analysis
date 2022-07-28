@@ -4,7 +4,7 @@ import sys, os, inspect
 PACKAGE_PARENT = '../..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(inspect.getfile(inspect.currentframe())))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
-
+from werkzeug.exceptions import HTTPException
 from photo_tools_app.__init__ import CORE_DIR
 sys.path.append(CORE_DIR+'/extensions/face_sdk')
 # sys.path.append('/Users/vega/workspace/codes/py_space/working/photo-tools-api/core/extensions/face_sdk')
@@ -12,15 +12,16 @@ sys.path.append(CORE_DIR+'/extensions/face_sdk')
 from aip import AipFace
 import yaml
 import cv2
+import numpy as np
 import torch
 from core.extensions.face_sdk.core.model_loader.face_detection.FaceDetModelLoader import FaceDetModelLoader
 from core.extensions.face_sdk.core.model_handler.face_detection.FaceDetModelHandler import FaceDetModelHandler
 
 from photo_tools_app.config.constant import Constant
-from photo_tools_app.exception.api_exception import FaceDetModelParseeFailed, FaceDetModelLoaderFailed, FaceDetectionImgFailed
+from photo_tools_app.exception.api_exception import FaceDetModelParseeFailed, FaceDetModelLoaderFailed, FaceDetectionImgFailed, FaceImgNotExists
 
 
-class FaceDetect():
+class FaceDetect(object):
 
     @staticmethod
     def getBaiDuClient():
@@ -59,13 +60,14 @@ class FaceDetect():
         return model, cfg
 
     @staticmethod
-    def libFaceDetection(model, cfg, image_path):
-        image = cv2.imread(image_path, cv2.IMREAD_COLOR)
+    def libFaceDetection(model, cfg, image_stream):
+        # if not image_path or not os.path.exists(image_path):
+        #     raise FaceImgNotExists()
+        image = cv2.imdecode(np.frombuffer(image_stream, np.uint8), cv2.IMREAD_COLOR)
         faceDetModelHandler = FaceDetModelHandler(model, 'cuda:0' if torch.cuda.is_available() else 'cpu', cfg)
         try:
             dets = faceDetModelHandler.inference_on_image(image)
-            print(dets, '-----')
-        except Exception as e:
+        except HTTPException as e:
             raise FaceDetectionImgFailed(e)
         return dets
 

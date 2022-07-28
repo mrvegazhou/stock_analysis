@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
-import subprocess
 import os
 from flask_cors import CORS  # 添加CORS组件 允许跨域访问
 from flask import Flask, request, make_response, send_from_directory, current_app, g, jsonify, Blueprint
 from .config.sys_config import config
 
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func
 
 from flask_apscheduler import APScheduler
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from .log.logger import Logger
-from .utils import common, date_utils, auth_token
-from .http.response import send, CODE
+from .utils import common, date_utils, auth_token, image_utils
+from .http.response import send, sendWithHeader, CODE
 from .http import reqparse
 from .exception.api_exception import APIException
 from .config import constant
@@ -49,7 +47,8 @@ logger.init_app(app)
 utils = {
     "common": common,
     "date": date_utils,
-    "auth": auth_token
+    "auth": auth_token,
+    "image": image_utils
 }
 
 # 其他组件注册

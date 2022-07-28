@@ -60,6 +60,7 @@ CODE = {
     50008: '数据格式异常',
     50009: '参数值错误',
     50010: '微信小程序访问失败',
+    50011: 'json转换异常',
 
     # 管理权限
     60001: '角色不存在',
@@ -75,6 +76,13 @@ CODE = {
     80001: '图片识别模型文件分析失败',
     80002: '加载图片识别模型失败',
     80003: '图片识别异常',
+    80004: '创建图片参数错误',
+    80005: '图片上传失败',
+    80006: '图片格式错误',
+    80007: '图片存储路径错误',
+    80008: '图片不存在',
+    80009: '图片中不存在人像',
+    80010: '抠图异常',
 
     -1:    '未知错误',
     404: '请求路径不存在'
@@ -96,3 +104,10 @@ def send(code, msg=None, data=None, **kwargs):
     result = {"code": code, "msg": msg, "data": data}
     result.update(kwargs)
     return json_return(result)
+
+
+def sendWithHeader(headers, code, msg=None, data=None, **kwargs):
+    res = send(code, msg=msg, data=data, **kwargs)
+    for key, value in headers.items():
+        res.headers[key] = value
+    return res

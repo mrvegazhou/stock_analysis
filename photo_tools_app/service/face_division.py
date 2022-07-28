@@ -9,15 +9,16 @@ from photo_tools_app.__init__ import CORE_DIR
 
 import base64
 
-from core.extensions.PPHumanSeg.Matting.predict import ArgsObj, main as FaceDivisionLib
+from core.extensions.PPHumanSeg.Matting.infer import ArgsObj, main as FaceDivisionLib
 
 from photo_tools_app.config.constant import Constant
 from photo_tools_app.utils.common_util import getFileContent
 
 from aip import AipBodyAnalysis
-from photo_tools_app.exception.api_exception import FaceDetectionImgFailed
+from photo_tools_app.exception.api_exception import FaceDetectionImgFailed, FaceImgSaveDirFailed, FaceImgNotExists
 
-class FaceDivision():
+
+class FaceDivision(object):
 
     @staticmethod
     def getBaiDuClient():
@@ -34,14 +35,22 @@ class FaceDivision():
             fp.write(foreground)
 
     @staticmethod
-    def libFaceDivision():
-        pass
+    def libFaceDivision(save_dir, image_path):
+        if not save_dir or not os.path.isdir(save_dir):
+            raise FaceImgSaveDirFailed()
+        if not image_path or not os.path.exists(image_path):
+            raise FaceImgNotExists()
+        args = ArgsObj()
+        args.cfg = CORE_DIR + '/extensions/PPHumanSeg/Matting/models/modnet-mobilenetv2/deploy.yaml'
+        args.image_path = image_path
+        args.save_dir = save_dir
+        FaceDivisionLib(args)
+
+
+
+
+
 
 if __name__ == "__main__":
     # FaceDivision.baiduFaceDivision(FaceDivision.getBaiDuClient(), 'image1.jpg')
-    args = ArgsObj()
-    args.cfg = CORE_DIR+'/extensions/PPHumanSeg/Matting/configs/modnet/modnet-mobilenetv2.yml'
-    args.image_path = 'image1.jpg'
-    args.save_dir = './output/results'
-    args.model_path = CORE_DIR+'/extensions/PPHumanSeg/Matting/export_model/modnet-mobilenetv2/modnet-mobilenetv2.pdparams'
-    FaceDivisionLib(args)
+    FaceDivision.libFaceDivision('/Users/vega/workspace/codes/py_space/working/photo-tools-api/photo_tools_app/service/out', '/Users/vega/workspace/codes/py_space/working/photo-tools-api/photo_tools_app/service/p.jpg')

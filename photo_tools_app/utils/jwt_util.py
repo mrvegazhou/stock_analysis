@@ -30,7 +30,7 @@ class JwtUtil():
         try:
             # payload = jwt.decode(auth_token, app.config.get('SECRET_KEY'), leeway=datetime.timedelta(seconds=10))
             # 取消过期时间验证
-            payload = jwt.decode(auth_token, Constant.JWT_SALT.value, options={'verify_exp': False})
+            payload = jwt.decode(auth_token, Constant.JWT_SALT.value, algorithms=["HS256"], options={'verify_exp': False})
             if 'data' in payload:
                 return payload
             else:

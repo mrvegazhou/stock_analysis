@@ -20,3 +20,4 @@ filelock
 scipy
 prettytable
 sklearn
+unicodedata2

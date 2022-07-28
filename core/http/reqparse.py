@@ -323,13 +323,17 @@ class RequestParser(object):
         # among self.args, it will be popped out
         req.unparsed_arguments = dict(self.argument_class('').source(req)) if strict else {}
         errors = {}
+
         for arg in self.args:
+
             value, found = arg.parse(req, self.bundle_errors)
+
             if isinstance(value, ValueError):
                 errors.update(found)
                 found = None
             if found or arg.store_missing:
                 namespace[arg.dest or arg.name] = value
+
         if errors:
             abort(http_error_code, message=errors)
 

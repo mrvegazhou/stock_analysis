@@ -5,6 +5,7 @@ from importlib import import_module
 from flask import Blueprint
 import functools
 
+
 # 路由函数的权限和模块信息(meta信息)
 # name 权限名；module 权限所属模块
 Meta = namedtuple('Meta', ['name', 'module'])
@@ -24,7 +25,6 @@ class Redprint(object):
                 return func(*args, **kwargs)
             self.mound.append((func, rule, options))
             return wrapper
-
         return decorator
 
     def register(self, bp, url_prefix=None):
@@ -78,12 +78,12 @@ class RedprintAssigner():
         :return: (url_prefix, bp) ('/v1', v1)
         '''
         api_modules = {}
-        for rp_api in self.rp_api_list:
-            [module_name, api_name] = rp_api.split('.')
-            api = self.__import_redprint(module_name, api_name)
+        for rp_api, module_name in self.rp_api_list.items():
+            [module_route_name, api_name] = rp_api.split('.')
+            api = self.__import_redprint(module_route_name, api_name)
             # 将「红图列表」注册到蓝图中
             if module_name not in api_modules.keys():
-                bp = Blueprint(module_name, "{}.{}".format(self.api_path, module_name))
+                bp = Blueprint(module_name, "{}.{}".format(self.api_path, module_route_name))
                 api_modules.setdefault(module_name, bp)
             else:
                 bp = api_modules.get(module_name)

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from photo_tools_app.__init__ import send, reqparse, Redprint
+from photo_tools_app.__init__ import send, reqparse, Redprint, g, CODE
 import requests
 from photo_tools_app.config.constant import Constant
 from photo_tools_app.utils.jwt_util import JwtUtil
-
-parser = reqparse.RequestParser()
+from photo_tools_app.utils.jwt_required import jwt_required, jwt_wx_authentication
 
 api = Redprint(name='auth')
 
@@ -27,6 +26,7 @@ def login():
     errcode	number	错误码
     errmsg	string	错误信息
     """
+    parser = reqparse.RequestParser()
     parser.add_argument('platCode')
     args = parser.parse_args(http_error_code=50003)
     code = args['platCode']
@@ -44,5 +44,25 @@ def login():
         session_key = rq_json.get('session_key')
         # jwt生成
         jwt_token = JwtUtil.encode_token({'openid': openid, 'session_key': session_key})
-        return send(200, data={'jwt': jwt_token})
+        print(jwt_token, openid, session_key, '-------jwt=---------')
+        return send(200, data={'jwt': jwt_token, 'openid': openid})
+
+
+@api.route('/check', methods=["POST"])
+@jwt_required
+def checkOpenid():
+    parser = reqparse.RequestParser()
+    parser.add_argument('openid')
+    args = parser.parse_args(http_error_code=50003)
+    openid = args['openid']
+    # jwt_wx_authentication()
+    data = g.session_key
+    if openid!=data['openid']:
+        data = {"error": CODE[50010]}
+        return send(50010, data=data)
+    return send(200, data={'openid': openid})
+
+
+
+
 

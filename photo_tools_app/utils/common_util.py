@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import base64
+from photo_tools_app.__init__ import app
+
 
 # def hashCode(s):
 #     seed = 31
@@ -51,6 +53,10 @@ def imageToBase64(imagePath):
 def getFileContent(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
+
+# 用于判断文件后缀
+def allowedFile(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 
 if __name__ == "__main__":

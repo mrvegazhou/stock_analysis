@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from __init__ import app, WEB_IP, WEB_PORT, Blueprint, RedprintAssigner
+from werkzeug.routing import BaseConverter
+from __init__ import app, WEB_IP, WEB_PORT, RedprintAssigner
 from photo_tools_app.utils.jwt_required import jwt_wx_authentication
 
 APP_NAME = 'photo_tools_app'
@@ -30,6 +31,13 @@ def after_request(resp):
 app.after_request(after_request)
 
 
+# 正则匹配路由
+class staticFileConverter(BaseConverter):
+    def __init__(self, url_map):
+        super().__init__(url_map)
+        self.regex = r'[0-9A-Za-z]{1,32}(_rgba|_c)?\.(png|jpe?g|gif|svg)'
+app.url_map.converters["staticFile"] = staticFileConverter
+
 if __name__ == "__main__":
     load_config()
     register_blueprint()
@@ -42,7 +50,7 @@ if __name__ == "__main__":
         #    './server.crt',
         #    './server_nopwd.key')
     else:
-        from werkzeug.contrib.fixers import ProxyFix
+        from werkzeug.middleware.proxy_fix import ProxyFix
 
         # 线上服务部署  对接gunicorn
         app.wsgi_app = ProxyFix(app.wsgi_app)
