@@ -1,1 +1,2 @@
 /Users/vega/workspace/codes/py_space/working/photo-tools-apicore/extensions/paddleDetection/export_model/ppyolo_r50vd_dcn_1x_coco.pdparams filter=lfs diff=lfs merge=lfs -text
+/Users/vega/workspace/codes/py_space/working/photo-tools-api/core/extensions/paddleDetection/export_model/ppyolo_r50vd_dcn_1x_coco.pdparams filter=lfs diff=lfs merge=lfs -text
