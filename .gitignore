@@ -1,3 +1,4 @@
 .idea/
 __pycache__/
 core/instance/
+core/extensions/paddleDetection/export_model/ppyolo_r50vd_dcn_1x_coco.pdparams
